@@ -2,32 +2,81 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Morshway Studios</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morshway Piks</title>
+    <!-- Link to CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Retro Font -->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|VT323&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1 class="main-title">Morshway Piks</h1>
-        <canvas id="vhsCanvas" width="600" height="300"></canvas> <!-- Canvas for logo image with VHS scanlines -->
+    <!-- Taskbar (Always Visible) -->
+    <nav id="taskbar">
+        <ul>
+            <li><a href="#game-design">Game Design</a></li>
+            <li><a href="#web-design">Web Design</a></li>
+            <li><a href="#books">Books</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#checkout" class="checkout-button">Checkout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Landing Page -->
+    <header id="landing-page">
+        <div class="login-screen">
+            <img src="Images/Henry.png" alt="Morshway Studios Logo" class="logo">
+            <h1>Welcome to Morshway Studios</h1>
+        </div>
     </header>
 
+    <!-- Main Content -->
     <main>
-        <h2>This Month's Hottest Picks</h2>
-        <ul class="product-list">
-            <li><a href="product1.html" class="product-box">Eren Yeagar Kneeling Figure</a></li>
-            <li><a href="product2.html" class="product-box">Product 2</a></li>
-            <li><a href="product3.html" class="product-box">Product 3</a></li>
-            <li><a href="product4.html" class="product-box">Product 4</a></li>
-            <li><a href="product5.html" class="product-box">Product 5</a></li>
-            <li><a href="product6.html" class="product-box">Product 6</a></li>
-            <li><a href="product7.html" class="product-box">Product 7</a></li>
-            <li><a href="product8.html" class="product-box">Product 8</a></li>
-            <li><a href="product9.html" class="product-box">Product 9</a></li>
-            <li><a href="product10.html" class="product-box">Product 10</a></li>
-        </ul>
+        <!-- About Us Banner -->
+        <section id="about-us" class="banner">
+            <h2>About Us</h2>
+            <p>Welcome to Morshway Studios, where we craft immersive experiences...</p>
+        </section>
+
+        <!-- Products/Services Banner -->
+        <section id="products-services" class="banner">
+            <h2>Products & Services</h2>
+            <div class="services-container">
+                <!-- Service 1 -->
+                <div class="service-box">
+                    <img src="Images/service1.png" alt="Game Design">
+                    <h3>Game Design</h3>
+                    <a href="purchase-game-design.html" class="purchase-button">See more</a>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-box">
+                    <img src="Images/service2.png" alt="Web Design">
+                    <h3>Web Design</h3>
+                    <a href="purchase-web-design.html" class="purchase-button">See more</a>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-box">
+                    <img src="Images/service3.png" alt="Books">
+                    <h3>Books</h3>
+                    <a href="purchase-books.html" class="purchase-button">See more</a>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-box">
+                    <img src="Images/service4.png" alt="Portfolio">
+                    <h3>Portfolio</h3>
+                    <a href="purchase-portfolio.html" class="purchase-button">See More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Banner -->
+        <section id="contact" class="banner">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us for collaborations or inquiries...</p>
+			<p> <b> Business Email: </b> kacevedo1201@icloud.com </p>
+        </section>
     </main>
 
+    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
