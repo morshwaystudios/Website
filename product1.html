@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product 1</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #00FF00;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Background image with opacity using an overlay */
+        .background-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('aotwallpaper.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .main-title {
+            font-size: 48px;
+            margin-top: 20px;
+            color: #581845;
+        }
+
+        .canvas-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px auto;
+            width: 500px;
+            height: 500px;
+            border: 2px solid #00FF00;
+            background-color: black;
+        }
+
+        #productImage {
+            width: 100%;
+            height: 100%;
+        }
+
+        .text-canvas {
+            display: inline-block;
+            background-color: rgba(128, 128, 128, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            width: 60%;
+            text-align: left;
+        }
+
+        .product-details {
+            color: #581845;
+            font-size: 18px;
+        }
+
+        #quantity {
+            margin-top: 10px;
+            padding: 5px;
+            font-size: 16px;
+            background-color: black;
+            color: #00FF00;
+            border: 1px solid #00FF00;
+            width: 60px;
+        }
+
+        #addToCart {
+            display: block;
+            margin: 20px auto;
+            background-color: #00FF00;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        #addToCart:hover {
+            background-color: #00A3E0;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-overlay"></div>
+
+    <header>
+        <h1 class="main-title">Eren Yeagar Titan Kneeling Figure</h1>
+    </header>
+
+    <div class="canvas-container">
+        <img id="productImage" src="ErenYeagar1.jpg" alt="Product 1">
+    </div>
+
+    <div class="text-canvas">
+        <div class="product-details">
+            <p>Tadakei!!! Tadakei!!! Tadakei!!! Unlike Eren, you don't have to fight for a deal as good as this on the Eren Yeagar Titan Kneeling Statue.</p>
+            <p>Price: $14.99</p>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1">
+
+            <button id="addToCart">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Background music autoplay with muted trick -->
+    <audio id="backgroundMusic" autoplay loop muted>
+        <source src="Aot1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        window.onload = function() {
+            const audio = document.getElementById('backgroundMusic');
+            const addToCartButton = document.getElementById('addToCart');
+            const quantityInput = document.getElementById('quantity');
+
+            // Listen for a click anywhere on the body to unmute audio
+            document.body.addEventListener('click', function() {
+                audio.muted = false;  // Unmute the background music
+            });
+
+            // Listen for scroll to unmute audio
+            window.addEventListener('scroll', function() {
+                audio.muted = false;  // Unmute the background music when the page is scrolled
+            });
+
+            addToCartButton.addEventListener('click', function() {
+                const quantity = quantityInput.value;
+                alert(`Added ${quantity} of Product 1 to your cart!`);
+            });
+        }
+    </script>
+</body>
+</html>
