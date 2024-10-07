@@ -1,78 +1,177 @@
-/* General styles */
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: black;
-    color: #00FF00;  /* Fallout 4 light green */
+    background-color: #000;
+    color: #00ff00; /* Fallout 4 light green */
+    font-family: 'VT323', monospace;
+    overflow-x: hidden;
 }
 
-/* Title styles with VHS scanline effect */
-.main-title {
-    text-align: center;
-    font-size: 48px;
-    margin-top: 20px;
-    color: #00FF00;
-    position: relative;
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
 }
 
-/* VHS scanline effect */
-.main-title::before {
-    content: '';
-    position: absolute;
+/* Taskbar Styles */
+#taskbar {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-image: repeating-linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.2) 0px,
-        rgba(0, 0, 0, 0.2) 2px,
-        transparent 2px,
-        transparent 4px
-    );
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0.7;
+    background-color: rgba(26, 26, 26, 0.9);
+    z-index: 10;
 }
 
-/* Canvas for logo and VHS effect */
-#vhsCanvas {
-    display: block;
-    margin: 20px auto;
-    width: 55%;  /* Set to 55% of the container */
-    height: 500px;
-    border: 2px solid #00FF00;
+#taskbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
 }
 
-/* Product List Section */
-h2 {
-    text-align: center;
-    color: #00FF00;
+#taskbar li {
+    margin: 0 15px;
 }
 
-.product-list {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
-}
-
-.product-list li {
-    margin: 10px 0;
-}
-
-.product-list li a {
+#taskbar a {
+    color: #00ff00;
     text-decoration: none;
     font-size: 18px;
-    color: #00FF00;
-    background-color: #333;
-    padding: 10px 15px;
-    border-radius: 5px;
-    display: inline-block;
 }
 
-/* Hover effect for product boxes */
-.product-list li a:hover {
-    background-color: #00A3E0;
-    color: #FFF;
+#taskbar .checkout-button {
+    border: 1px solid #00ff00;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Landing Page Styles */
+#landing-page {
+    margin-top: 60px; /* To prevent overlap with fixed taskbar */
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+.login-screen {
+    text-align: center;
+    position: relative;
+}
+
+.login-screen .logo {
+    width: 500px;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto 20px auto; /* Center the image horizontally */
+}
+
+/* Main Content Styles */
+.banner {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a1a;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    color: #00ff00;
+    padding: 80px 20px; /* Added top padding to account for taskbar */
+    text-align: center;
+}
+
+.banner h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.banner p {
+    max-width: 600px;
+}
+
+/* Services Container */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.service-box {
+    background-color: #333;
+    border: 1px solid #00ff00;
+    margin: 10px;
+    padding: 20px;
+    width: 250px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+}
+
+.service-box img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.service-box h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.purchase-button {
+    display: inline-block;
+    padding: 10px 15px;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.purchase-button:hover {
+    background-color: #00ff00;
+    color: #000;
+}
+
+/* Retro Font */
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P|VT323&display=swap');
+
+/* Scroll Fade-In Animations */
+.banner.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Eerie Glow Effect */
+h1, h2, h3, #taskbar a {
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+}
+
+/* Media Queries */
+@media (max-width: 800px) {
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .login-screen h1 {
+        font-size: 24px;
+    }
+
+    #taskbar a {
+        font-size: 14px;
+    }
+
+    .service-box {
+        width: 80%;
+    }
 }
