@@ -8,9 +8,30 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, p {
-    margin: 0;
-    padding: 0;
+/* VHS Effect Canvas */
+#vhsCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Background Container for Slideshow */
+.backgroundContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: contain; /* Ensure the whole image fits, can adjust to 'cover' if needed */
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
 /* Taskbar Styles */
@@ -77,22 +98,15 @@ h1, h2, h3, p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #1a1a1a;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+    background-color: #111d13; /* Slightly grey background for banners */
     color: #00ff00;
-    padding: 80px 20px; /* Added top padding to account for taskbar */
+    padding: 80px 20px;
     text-align: center;
+    transition: background-color 0.5s ease;
 }
 
-.banner h2 {
-    font-size: 35px;
-    margin-bottom: 20px;
-}
-
-.banner p {
-    max-width: 600px;
+.banner.transparent {
+    background-color: transparent;
 }
 
 /* Services Container */
@@ -140,38 +154,7 @@ h1, h2, h3, p {
     color: #000;
 }
 
-/* Retro Font */
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P|VT323&display=swap');
-
-/* Scroll Fade-In Animations */
-.banner.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 /* Eerie Glow Effect */
 h1, h2, h3, #taskbar a {
     text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
-}
-
-/* Media Queries */
-@media (max-width: 800px) {
-    .services-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media (max-width: 600px) {
-    .login-screen h1 {
-        font-size: 24px;
-    }
-
-    #taskbar a {
-        font-size: 14px;
-    }
-
-    .service-box {
-        width: 80%;
-    }
 }
