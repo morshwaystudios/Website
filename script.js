@@ -4,10 +4,10 @@ window.onload = function() {
     const canvas = document.getElementById('vhsCanvas');
     const ctx = canvas.getContext('2d');
     const images = [
-        'Images/plead.png', 
-        'Images/Secretpage1.png', 
-        'Images/Secretpage2.png', 
-        'Images/CircusPoster.png'
+        'plead.png', 
+        'Secretpage1.png', 
+        'Secretpage2.png', 
+        'CircusPoster.png'
     ];
     let currentImageIndex = 0;
 
